@@ -27,16 +27,8 @@ class Like(Base):
     created_at = Column(DateTime, default=func.now())
     updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
 
-
-
 # class Movie(Base):
 #     __tablename__ = 'movies'
 #     id = Column(Integer, primary_key=True)
+    
 
-#     fullname = Column(String)
-#     username = Column(String)
-#     email = Column(String, unique=True)
-#     password = Column(String)
-
-#     created_at = Column(DateTime, default=func.now())
-#     updated_at = Column(DateTime, default=func.now(), onupdate=func.now())

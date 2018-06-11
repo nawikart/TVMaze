@@ -23,13 +23,13 @@ def _unlike(user_id, show_id):
 def create__like(user_id, show_id):
     db = DbManager()
     like = Like()
-    # check = db.open().query(Like).filter(Like.user_id == user_id).filter(Like.show_id == show_id).all()
-    # if(check):
-    like.show_id = show_id
-    like.user_id = user_id
-    return db.save(like)
+    check = db.open().query(Like).filter(Like.user_id == user_id).filter(Like.show_id == show_id).all()
+    if len(check) == 0:
+        like.show_id = show_id
+        like.user_id = user_id
+        return db.save(like)
 
-    # return False
+    return False
 
 def create_user(fullname, username, email, password):
     db = DbManager()
